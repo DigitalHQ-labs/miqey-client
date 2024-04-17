@@ -4,6 +4,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Libaro\SecureId\MiQey;
 use Mockery\MockInterface;
 use Tests\TestCase;
 
@@ -12,7 +13,7 @@ use Tests\TestCase;
 //});
 
 test('LaravelSlowQueries can be loaded', function () {
-    $package = new \Libaro\SecureId\SecureId();
+    $package = new MiQey;
 
-    expect($package)->toBeInstanceOf(\Libaro\SecureId\SecureId::class);
+    expect($package)->toBeInstanceOf(MiQey::class);
 });

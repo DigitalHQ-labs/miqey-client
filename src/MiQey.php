@@ -1,8 +1,8 @@
 <?php
 
-namespace Libaro\SecureId;
+namespace Libaro\MiQey;
 
-class SecureId
+class MiQey
 {
     // Build your next great package.
 }

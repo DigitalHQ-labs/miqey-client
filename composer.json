@@ -1,18 +1,19 @@
 {
-    "name": "libaro/secure-id",
-    "description": "A package to integrate secure-id",
+    "name": "libaro/miqey-client",
+    "description": "A package to integrate MiQey into your application",
     "keywords": [
         "libaro",
-        "secure-id"
+        "secure-id",
+        "miqey"
     ],
-    "homepage": "https://github.com/libaro/secure-id",
+    "homepage": "https://github.com/libaro/miqey-client",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Tim Vande Walle",
-            "email": "tim@libaro.be",
-            "role": "Developer"
+            "name": "Libaro",
+            "email": "github@libaro.be",
+            "role": "Company"
         }
     ],
     "require": {
@@ -29,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Libaro\\SecureId\\": "src"
+            "Libaro\\MiQey\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Libaro\\SecureId\\Tests\\": "tests"
+            "Libaro\\MiQey\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -53,10 +54,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Libaro\\SecureId\\SecureIdServiceProvider"
+                "MiQeyServiceProvider"
             ],
             "aliases": {
-                "SecureId": "Libaro\\SecureId\\SecureIdFacade"
+                "MiQey": "MiQeyFacade"
             }
         }
     }

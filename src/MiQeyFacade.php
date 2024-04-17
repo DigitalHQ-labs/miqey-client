@@ -1,10 +1,10 @@
 <?php
 
-namespace Libaro\SecureId;
+namespace Libaro\MiQey;
 
 use Illuminate\Support\Facades\Facade;
 
-class SecureIdFacade extends Facade
+class MiQeyFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class SecureIdFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'secure-id';
+        return 'miqey';
     }
 }

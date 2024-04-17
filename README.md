@@ -1,22 +1,21 @@
-# Description of the Laravel package
+# MiQey Client
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/libaro/secure-id.svg?style=flat-square)](https://packagist.org/packages/libaro/secure-id)
 [![Total Downloads](https://img.shields.io/packagist/dt/libaro/secure-id.svg?style=flat-square)](https://packagist.org/packages/libaro/secure-id)
-![GitHub Actions](https://github.com/libaro/secure-id/actions/workflows/main.yml/badge.svg)
 
-The Secure ID Laravel Package simplifies the integration of the Secure ID functionality into your Laravel projects. Secure ID is designed to facilitate a secure login procedure by generating sign requests, managing user responses through QR codes or SMS, and seamlessly logging users into your projects.
+The SMiQey Client Laravel Package simplifies the integration of the MiQey functionality into your Laravel projects. MiQey is designed to facilitate a secure login procedure by generating sign requests, managing user responses through QR codes or SMS, and seamlessly logging users into your projects.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require libaro/secure-id
+composer require libaro/miqey-client
 ```
 
 Publish the config file: 
 ```php
-php artisan vendor:publish --provider="Libaro\SecureId\SecureIdServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Libaro\MiQey\MiQeyServiceProvider" --tag="config"
 ```
 The content of the config file:
 ```php
@@ -24,10 +23,6 @@ return [
     'api_url' => env('SECURE_ID_API_URL', 'https://secureid.digitalhq.com/api/generate'),
     'api_key' => env('SECURE_ID_API_KEY'),
     'api_url_prefix' => env('SECURE_ID_API_URL_PREFIX', '/api/secure-id'),
-
-    'webhook_handlers' => [
-        \Support\Interfaces\SecureIdWebhookHandler::class,
-    ],
 ];
 ```
 
@@ -57,15 +52,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ### Security
 
-If you discover any security related issues, please email tim@libaro.be instead of using the issue tracker.
-
-## Credits
-Props to:
--   [Tim Vande Walle](https://github.com/libaro-io)
--   [Libaro](https://github.com/libaro-io)
--   [DigitalHQ](https://digitalhq.com)
-- https://www.laravelpackage.com
-- https://laravelpackageboilerplate.com
+If you discover any security related issues, please email github@libaro.be instead of using the issue tracker.
 
 ## License
 

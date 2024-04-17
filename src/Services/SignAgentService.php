@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\SecureId\Services;
+namespace Libaro\MiQey\Services;
 
 use Exception;
 use \Illuminate\Http\Client\Response;
@@ -29,9 +29,7 @@ class SignAgentService
     public function getSign(string $callbackUrl = 'default'): array
     {
         $message = $this->getMessage();
-        $sign = $this->getSignFromMessage($message);
-
-        return $sign;
+        return $this->getSignFromMessage($message);
     }
 
 
@@ -46,13 +44,13 @@ class SignAgentService
     {
         $apiKey = config('secure-id.api_key');
         if (! $apiKey) {
-            throw new Exception('No apikey defined for secureid');
+            throw new \RuntimeException('No apikey defined for miQey');
         }
 
         /** @var string $apiUrl */
         $apiUrl = config('secure-id.api_url');
 
-        $response = Http::post(strval($apiUrl), [
+        $response = Http::post($apiUrl, [
             'api_key' => $apiKey,
             'type' => $this->getMethod(),
             'template' => $template,
@@ -73,9 +71,9 @@ class SignAgentService
     {
         if ($this->agent->isDesktop()) {
             return 'qr';
-        } else {
-            return 'sms';
         }
+
+        return 'sms';
     }
 
 
@@ -93,14 +91,15 @@ class SignAgentService
 
         if ($this->agent->isDesktop()) {
             $sign['data'] = $data[$method];
-        } else {
-            if ($this->agent->isAndroidOS()) {
-                $sign['data'] = $data['android'];
-            } else {
-                $sign['data'] = $data['ios'];
-            }
+            return $sign;
         }
 
+        if ($this->agent->isAndroidOS()) {
+            $sign['data'] = $data['android'];
+            return $sign;
+        }
+
+        $sign['data'] = $data['ios'];
         return $sign;
     }
 }
