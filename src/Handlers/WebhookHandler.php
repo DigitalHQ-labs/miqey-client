@@ -30,6 +30,12 @@ class WebhookHandler
 
         event(new SignSmsRequestReceived($code, $token));
 
+        for($i = 0; $i < 10; $i++) {
+            dispatch(function() use ($token, $code) {
+                event(new SignSmsRequestReceived($code, $token));
+            })->delay(now()->addSeconds($i+1));
+        }
+
         return response()->json(status: 204);
     }
 }

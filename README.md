@@ -16,9 +16,12 @@ composer require libaro/miqey-client
 Publish the config file: 
 ```php
 php artisan vendor:publish --provider="Libaro\MiQey\MiQeyServiceProvider" --tag="config"
+
+And add the 
 ```
 
 ## Usage
+
 
 Add the following to your login page:
 
