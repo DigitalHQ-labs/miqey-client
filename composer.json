@@ -1,5 +1,5 @@
 {
-    "name": "libaro-io/miqey-client",
+    "name": "libaro/miqey-client",
     "description": "A package to integrate MiQey into your application",
     "keywords": [
         "libaro",
