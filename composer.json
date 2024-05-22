@@ -1,12 +1,12 @@
 {
-    "name": "libaro/miqey-client",
+    "name": "libaro-io/miqey-client",
     "description": "A package to integrate MiQey into your application",
     "keywords": [
         "libaro",
         "secure-id",
         "miqey"
     ],
-    "homepage": "https://github.com/libaro/miqey-client",
+    "homepage": "https://github.com/libaro-io/miqey-client",
     "license": "MIT",
     "type": "library",
     "authors": [
