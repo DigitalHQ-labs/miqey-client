@@ -15,7 +15,7 @@ class WebhookHandler
 
         $signature = $request->header('Signature');
 
-        $calculatedSignature = hash_hmac('sha256', $request->getContent(), config('miqey-login.webhook_secret'));
+        $calculatedSignature = hash_hmac('sha256', $request->getContent(), config('miqey.webhook_secret'));
 
         if (! hash_equals($signature, $calculatedSignature)) {
             return response()->json(status: 401);
