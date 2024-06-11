@@ -21,7 +21,7 @@ class ValidationController extends Controller
 
         $userClass = config('miqey.user_model');
         $user = $userClass::query()
-            ->where('phone_number', '=', $phoneNumber)
+            ->where(config('miqey.user_phone_column', 'phone_number'), '=', $phoneNumber)
             ->first();
 
         if (is_null($user)) {
