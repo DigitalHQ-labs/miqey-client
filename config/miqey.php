@@ -8,4 +8,6 @@ return [
     'webhook_endpoint' => env('MIQEY_WEBHOOK_ENDPOINT'),
 
     'user_model' => env('MIQEY_USER_MODEL', '\App\Models\User'),
+
+    'user_phone_column' => 'phone_number',
 ];
