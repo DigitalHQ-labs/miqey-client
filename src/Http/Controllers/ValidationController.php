@@ -31,6 +31,6 @@ class ValidationController extends Controller
 
         Auth::login($user);
 
-        return redirect()->to(App\Providers\RouteServiceProvider\RouteServiceProvider::HOME);
+        return redirect()->to(App\Providers\RouteServiceProvider::HOME);
     }
 }
