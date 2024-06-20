@@ -6,6 +6,9 @@ use Exception;
 use \Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Jenssegers\Agent\Agent;
+use Libaro\MiQey\Exceptions\ApplicationTypeNotSupportedException;
+use Libaro\MiQey\Exceptions\FreeMessagesLimitExceededException;
+use Libaro\MiQey\Exceptions\WalletNotActivatedException;
 
 class SignAgentService
 {
@@ -33,6 +36,16 @@ class SignAgentService
 
         /** @var array<string, string> $result */
         $result = $response->json();
+
+        if ($response->status() !== 200) {
+            $errorMessage = $response->json('message');
+            return match ($response->json('error')) {
+                'ApplicationNotSupported' => throw new ApplicationTypeNotSupportedException($errorMessage),
+                'WalletNotActivated' => throw new WalletNotActivatedException($errorMessage),
+                'FreeMessagesLimitExceeded' => throw new FreeMessagesLimitExceededException($errorMessage),
+                default => throw new Exception(),
+            };
+        }
 
         return $result;
     }
