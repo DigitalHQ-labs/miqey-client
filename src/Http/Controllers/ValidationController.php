@@ -29,7 +29,7 @@ class ValidationController extends Controller
             abort(403, 'user not found');
         }
 
-        Auth::login($user);
+        Auth::login($user, config('miqey.remember_user'));
 
         return redirect()->to($request->get('redirect_to', '/'));
     }
