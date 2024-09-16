@@ -25,6 +25,10 @@ class SignAgentService
         return $this->getSignFromMessage($message);
     }
 
+    public function getRawSign(): array
+    {
+        return $this->getMessage();
+    }
 
     /**
      * @return string[]
