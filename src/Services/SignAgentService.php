@@ -12,8 +12,9 @@ use Libaro\MiQey\Exceptions\WalletNotActivatedException;
 
 class SignAgentService
 {
-
     private const API_ENDPOINT = 'https://secureid.digitalhq.com/api/';
+
+    private bool $base64EncodedQr = false;
 
     /**
      * @return string[]
@@ -31,10 +32,21 @@ class SignAgentService
     }
 
     /**
+     * @return self
+     */
+    public function withBase64EncodedQr(): self
+    {
+        $this->base64EncodedQr = true;
+
+        return $this;
+    }
+
+    /**
      * @return string[]
      * @throws Exception
      */
-    private function getMessage(): array
+    private
+    function getMessage(): array
     {
         $response = $this->doApiCall('generate');
 
@@ -57,7 +69,8 @@ class SignAgentService
     /**
      * @return string
      */
-    private function getMethod(): string
+    private
+    function getMethod(): string
     {
         if ((new Agent())->isDesktop()) {
             return 'qr';
@@ -71,16 +84,22 @@ class SignAgentService
      * @param array<string, string> $data
      * @return array<string, string>
      */
-    private function getSignFromMessage(array $data): array
+    private
+    function getSignFromMessage(array $data): array
     {
         $method = $this->getMethod();
         $agent = new Agent;
         $sign = [];
 
-        $sign['type'] = $this->getMethod();
+        $sign['type'] = $method;
         $sign['code'] = $data['code'];
 
         if ($agent->isDesktop()) {
+            if ($method === 'qr' && $this->base64EncodedQr && isset($data['base64Qr'])) {
+                $sign['data'] = $data['base64Qr'];
+                return $sign;
+            };
+
             $sign['data'] = $data[$method];
             return $sign;
         }
@@ -100,7 +119,7 @@ class SignAgentService
             throw new \RuntimeException('No apikey defined for miQey');
         }
 
-        return Http::post(self::API_ENDPOINT.$path, [
+        return Http::post(self::API_ENDPOINT . $path, [
             'api_key' => config('miqey.api_key'),
         ]);
     }
