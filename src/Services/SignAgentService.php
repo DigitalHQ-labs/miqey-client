@@ -14,7 +14,13 @@ class SignAgentService
 {
     private const API_ENDPOINT = 'https://secureid.digitalhq.com/api/';
 
+    protected string $apiEndpoint;
     private bool $base64EncodedQr = false;
+
+    public function __construct()
+    {
+        $this->apiEndpoint = config('miqey.api_endpoint') ?? self::API_ENDPOINT;
+    }
 
     /**
      * @return string[]
@@ -119,7 +125,7 @@ class SignAgentService
             throw new \RuntimeException('No apikey defined for miQey');
         }
 
-        return Http::post(self::API_ENDPOINT . $path, [
+        return Http::post($this->apiEndpoint . $path, [
             'api_key' => config('miqey.api_key'),
         ]);
     }
