@@ -1,7 +1,7 @@
 # MiQey Client
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/libaro/miqey-client.svg?style=flat-square)](https://packagist.org/packages/libaro/miqey-client)
-[![Total Downloads](https://img.shields.io/packagist/dt/libaro/miqey-client.svg?style=flat-square)](https://packagist.org/packages/libaro/miqey-client)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/libaro/miqey-client.svg?style=flat-square)](https://packagist.org/packages/digitalhq-labs/miqey-client)
+[![Total Downloads](https://img.shields.io/packagist/dt/libaro/miqey-client.svg?style=flat-square)](https://packagist.org/packages/digitalhq-labs/miqey-clientt)
 
 The MiQey Client Laravel Package simplifies the integration of the MiQey functionality into your Laravel projects. MiQey is designed to facilitate a secure login procedure by generating sign requests, managing user responses through QR codes or SMS, and seamlessly logging users into your projects.
 
@@ -10,12 +10,12 @@ The MiQey Client Laravel Package simplifies the integration of the MiQey functio
 You can install the package via composer:
 
 ```bash
-composer require libaro/miqey-client
+composer require digitalhq-labs/miqey-client
 ```
 
 Publish the config file: 
 ```php
-php artisan vendor:publish --provider="Libaro\MiQey\MiQeyServiceProvider" --tag="config"
+php artisan vendor:publish --provider="DigitalHQ\MiQey\MiQeyServiceProvider" --tag="config"
 ```
 
 ## Usage

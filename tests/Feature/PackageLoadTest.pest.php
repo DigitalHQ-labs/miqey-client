@@ -4,7 +4,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
-use Libaro\SecureId\MiQey;
+use DigitalHQ\SecureId\MiQey;
 use Mockery\MockInterface;
 use Tests\TestCase;
 

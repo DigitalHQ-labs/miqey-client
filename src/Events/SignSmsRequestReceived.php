@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\MiQey\Events;
+namespace DigitalHQ\MiQey\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;

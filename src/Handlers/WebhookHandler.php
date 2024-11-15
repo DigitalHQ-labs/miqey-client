@@ -1,11 +1,11 @@
 <?php
 
-namespace Libaro\MiQey\Handlers;
+namespace DigitalHQ\MiQey\Handlers;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
-use Libaro\MiQey\Events\SignSmsRequestReceived;
-use Libaro\MiQey\Requests\WebhookReceivedRequest;
+use DigitalHQ\MiQey\Events\SignSmsRequestReceived;
+use DigitalHQ\MiQey\Requests\WebhookReceivedRequest;
 
 class WebhookHandler
 {

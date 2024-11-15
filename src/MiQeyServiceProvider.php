@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\MiQey;
+namespace DigitalHQ\MiQey;
 
 use Illuminate\Support\ServiceProvider;
 

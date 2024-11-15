@@ -6,12 +6,12 @@
         "secure-id",
         "miqey"
     ],
-    "homepage": "https://github.com/DigitalHQ-lab/miqey-client",
+    "homepage": "https://github.com/DigitalHQ-labs/miqey-client",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "Libaro",
+            "name": "DigitalHQ",
             "email": "github@libaro.be",
             "role": "Company"
         }
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Libaro\\MiQey\\": "src"
+            "DigitalHQ\\MiQey\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Libaro\\MiQey\\Tests\\": "tests"
+            "DigitalHQ\\MiQey\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,7 +54,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Libaro\\MiQey\\MiQeyServiceProvider"
+                "DigitalHQ\\MiQey\\MiQeyServiceProvider"
             ],
             "aliases": {
                 "MiQey": "MiQeyFacade"

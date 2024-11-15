@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\MiQey\Requests;
+namespace DigitalHQ\MiQey\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

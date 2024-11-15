@@ -1,12 +1,12 @@
 <?php
 //
 //
-//use Libaro\SecureId\SecureIdServiceProvider;
-//use Libaro\SecureId\Services\SignAgentService;
-//use Libaro\SecureId\Interfaces\WebhookHandlerInterface;
-//use Libaro\SecureId\Interfaces\DefaultWebhookHandler;
-//use Libaro\SecureId\Http\Requests\WebhookValidationRequest;
-//use Libaro\SecureId\Http\Controllers\Api\WebhookController;
+//use DigitalHQ\SecureId\SecureIdServiceProvider;
+//use DigitalHQ\SecureId\Services\SignAgentService;
+//use DigitalHQ\SecureId\Interfaces\WebhookHandlerInterface;
+//use DigitalHQ\SecureId\Interfaces\DefaultWebhookHandler;
+//use DigitalHQ\SecureId\Http\Requests\WebhookValidationRequest;
+//use DigitalHQ\SecureId\Http\Controllers\Api\WebhookController;
 //use Illuminate\Support\Facades\Config;
 //use Illuminate\Support\Facades\Http;
 //use Illuminate\Support\Facades\Log;

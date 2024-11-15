@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\MiQey\Http\Controllers;
+namespace DigitalHQ\MiQey\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

@@ -1,14 +1,14 @@
 <?php
 
-namespace Libaro\MiQey\Services;
+namespace DigitalHQ\MiQey\Services;
 
 use Exception;
 use \Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 use Jenssegers\Agent\Agent;
-use Libaro\MiQey\Exceptions\ApplicationTypeNotSupportedException;
-use Libaro\MiQey\Exceptions\FreeMessagesLimitExceededException;
-use Libaro\MiQey\Exceptions\WalletNotActivatedException;
+use DigitalHQ\MiQey\Exceptions\ApplicationTypeNotSupportedException;
+use DigitalHQ\MiQey\Exceptions\FreeMessagesLimitExceededException;
+use DigitalHQ\MiQey\Exceptions\WalletNotActivatedException;
 
 class SignAgentService
 {

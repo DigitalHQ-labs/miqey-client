@@ -1,6 +1,6 @@
 <?php
 
-namespace Libaro\MiQey\Exceptions;
+namespace DigitalHQ\MiQey\Exceptions;
 
 use Exception;
 

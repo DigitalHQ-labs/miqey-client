@@ -1,8 +1,8 @@
 <?php
 
 
-use Libaro\MiQey\MiQeyServiceProvider;
-use Libaro\MiQey\Services\SignAgentService;
+use DigitalHQ\MiQey\MiQeyServiceProvider;
+use DigitalHQ\MiQey\Services\SignAgentService;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
