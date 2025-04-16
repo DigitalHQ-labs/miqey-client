@@ -26,7 +26,7 @@ class WebhookHandler
 
         $token = Str::random(32);
 
-        Cache::put($token, $phone, now()->addSeconds(10));
+        Cache::put($token, $phone, now()->addSeconds(15));
 
         event(new SignSmsRequestReceived($code, $token));
 
