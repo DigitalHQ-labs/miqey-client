@@ -32,7 +32,7 @@ class WebhookHandler
 
         $now = now();
 
-        for($i = 0; $i < 10; $i++) {
+        for($i = 2; $i < 10; $i++) {
             dispatch(function() use ($token, $code) {
                 event(new SignSmsRequestReceived($code, $token));
             })->delay($now->addSeconds($i+1));
